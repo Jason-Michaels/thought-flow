@@ -29,14 +29,15 @@ jobs:
         https://chrome.browserless.io/screenshot \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/json' \
-        --output example2.png \
         -d '{
         "url": "https://docs.browserless.io/docs/start.html",
         "options": {
-          "type": "png"
+          "fullPage": true,
+          "type": "png",
+          "quality": 75
         }'
         cp example2.png ./frontend/mysite.io/public
-    - name: Stage file to GH Pages
+    - name: Add screenshot file to GH Pages
       uses: peaceiris/actions-gh-pages@v2.5.0
       env: 
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
