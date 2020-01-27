@@ -29,7 +29,7 @@ jobs:
         https://chrome.browserless.io/screenshot \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/json' \
-        --output example2.png\
+        --output example2.png \
         -d '{
         "url": "https://docs.browserless.io/docs/start.html",
         "options": {
