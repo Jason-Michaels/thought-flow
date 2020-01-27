@@ -5,29 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML</title>
+  <title>Thought 💭 Flow</title>
   <!-- HTML -->
   <!-- Custom Styles -->
-  <style>
-    @media print {
-    .view-image-text {display:none;}
-  }
-  </style>
 <script src="./mermaid.min.js"></script>
 </head>
 
 <body>
-  <p class="view-image-text"><a href="./thought_flow.jpg">View Image</a></p>
+  <p><a href="./thought_flow.jpg">View Image</a></p>
   <br />
   <script>
     mermaid.initialize({ startOnLoad: true });
   </script>
   <div class="mermaid">
     stateDiagram
-      [*] --> First1
-      state First1 {
-        [*] --> second1
-        second1 --> [*]
+      [*] --> Hello
+      state Hello {
+        [*] --> World
+        World --> [*]
       }
   </div>
 </body>
