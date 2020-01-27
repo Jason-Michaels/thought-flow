@@ -13,13 +13,26 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: Copy files to public directory
+    - name: Stage files to public directory
       run: |
         mkdir -p ./frontend/mysite.io/public
-        cp {mermaid.min.js,index.html,example.jpg} ./frontend/mysite.io/public
-    - name: Deploy to GH Pages
+        cp {mermaid.min.js,index.html} ./frontend/mysite.io/public
+    - name: Stage file to GH Pages
       uses: peaceiris/actions-gh-pages@v2.5.0
       env: 
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./frontend/mysite.io/public
+    - name: Take screenshot and add to public directory
+      run: |
+        curl -o 'example.jpg' \
+        'https://ssfy.sh/dev/puppet-master@6cc8d95d/screenshot?type=jpeg&url=https%3A%2F%2Fyoutube.com'
+        cp example.jpg ./frontend/mysite.io/public
+    - name: Stage file to GH Pages
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env: 
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./frontend/mysite.io/public
+      with:
+        keepFiles: true  
