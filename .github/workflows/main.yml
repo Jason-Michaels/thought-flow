@@ -29,14 +29,15 @@ jobs:
         https://chrome.browserless.io/screenshot \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/json' \
-        --output example2.png \
+        --output thought_flow.png \
         -d '{
-        "url": "https://docs.browserless.io/docs/start.html",
+        "url": "https://jason-michaels.github.io/thought-flow/",
         "options": {
-          "type": "png"
+          "type": "png",
+          "quality": 100
           }
         }'
-        cp example2.png ./frontend/mysite.io/public
+        cp thought_flow.png ./frontend/mysite.io/public
     - name: Add screenshot file to GH Pages
       uses: peaceiris/actions-gh-pages@v2.5.0
       env: 
