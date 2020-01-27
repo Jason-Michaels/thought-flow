@@ -26,13 +26,16 @@ jobs:
     - name: Take screenshot and add to public directory
       run: |
         curl -X POST \
-        https://chrome.browserless.io/pdf \
+        https://chrome.browserless.io/screenshot \
+        -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/json' \
-        --output example2.pdf \
+        --output example2.png \
         -d '{
-        "url": "https://docs.browserless.io/docs/start.html"
+        "url": "https://docs.browserless.io/docs/start.html",
+        "options": {
+          "type": "png"
         }'
-        cp example2.pdf ./frontend/mysite.io/public
+        cp example2.png ./frontend/mysite.io/public
     - name: Stage file to GH Pages
       uses: peaceiris/actions-gh-pages@v2.5.0
       env: 
