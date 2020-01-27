@@ -25,9 +25,9 @@ jobs:
         PUBLISH_DIR: ./frontend/mysite.io/public
     - name: Take screenshot and add to public directory
       run: |
-        curl -o 'example.jpg' \
-        'https://ssfy.sh/dev/puppet-master@6cc8d95d/screenshot?type=jpeg&url=https%3A%2F%2Fyoutube.com'
-        cp example.jpg ./frontend/mysite.io/public
+        curl -o 'example.pdf' \
+        'https://ssfy.sh/dev/puppet-master@6cc8d95d/screenshot?type=pdf&url=https%3A%2F%2Fyoutube.com'
+        cp example.pdf ./frontend/mysite.io/public
     - name: Stage file to GH Pages
       uses: peaceiris/actions-gh-pages@v2.5.0
       env: 
