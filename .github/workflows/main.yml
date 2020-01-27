@@ -25,6 +25,8 @@ jobs:
         PUBLISH_DIR: ./frontend/mysite.io/public
     - name: Take screenshot and add to public directory
       run: |
+        echo "Waiting for a fews seconds for website update to reflect..."
+        sleep 5
         curl -X POST \
         https://chrome.browserless.io/screenshot \
         -H 'Cache-Control: no-cache' \
