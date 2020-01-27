@@ -29,12 +29,12 @@ jobs:
         https://chrome.browserless.io/screenshot \
         -H 'Cache-Control: no-cache' \
         -H 'Content-Type: application/json' \
+        --output example2.png\
         -d '{
         "url": "https://docs.browserless.io/docs/start.html",
         "options": {
-          "fullPage": true,
-          "type": "png",
-          "quality": 75
+          "type": "png"
+          }
         }'
         cp example2.png ./frontend/mysite.io/public
     - name: Add screenshot file to GH Pages
