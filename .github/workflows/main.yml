@@ -16,8 +16,6 @@ jobs:
     - name: Copy files to public directory
       run: |
         mkdir -p ./frontend/mysite.io/public
-        curl -o 'example.jpg' \
-        'https://ssfy.sh/dev/puppet-master@6cc8d95d/screenshot?type=jpeg&url=https%3A%2F%2Fyoutube.com'
         cp {mermaid.min.js,index.html,example.jpg} ./frontend/mysite.io/public
     - name: Deploy to GH Pages
       uses: peaceiris/actions-gh-pages@v2.5.0
