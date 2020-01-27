@@ -8,11 +8,16 @@
   <title>HTML</title>
   <!-- HTML -->
   <!-- Custom Styles -->
+  <style>
+    @media print {
+    .view-image-text {display:none;}
+  }
+  </style>
 <script src="./mermaid.min.js"></script>
 </head>
 
 <body>
-  <p><a href="./thought_flow.jpg">View Image</a></p>
+  <p class="view-image-text"><a href="./thought_flow.jpg">View Image</a></p>
   <br />
   <script>
     mermaid.initialize({ startOnLoad: true });
